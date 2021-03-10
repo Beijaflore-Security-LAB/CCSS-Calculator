@@ -207,11 +207,11 @@ while PLS != 1:
 
 # Explotiation Method (EM)
 EMS = 0
-print(Fore.BLUE+"Explotiation Method (EM)"+Style.RESET_ALL)
+print(Fore.BLUE+"Exploitation Method (EM)"+Style.RESET_ALL)
 while EMS != 1:
 	EM =  input ("Active "+Fore.YELLOW+"(A)"+Style.RESET_ALL+" or Passive "+Fore.YELLOW+"(P)"+Style.RESET_ALL+" or def: ")
 	if EM == "def":
-		print(Fore.GREEN+"Note: Exploitation Methode does not have an impact on how the CCSS score is calculated (Yea IDK why I must implement that)")
+		print(Fore.GREEN+"Note: Exploitation Method does not have an impact on how the CCSS score is calculated (Yea IDK why I must implement that)")
 		print("")
 		print("Active (A): Some vulnerabilities can be actively exploited, such as an attacker gaining access to a sensitive file because the targeted system is incorrectly configured to permit any user to read the file.")
 		print("")
