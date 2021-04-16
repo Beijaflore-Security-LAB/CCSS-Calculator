@@ -7,6 +7,6 @@ It is based on : https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7502.pdf
 To launch the script :
 ```sh
 chmod +x ccsscalc.py  
-./ccsscalc.p
+./ccsscalc.py
 ```
 .
