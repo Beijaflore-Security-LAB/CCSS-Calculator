@@ -20,7 +20,7 @@ print("")
 print("")
 ccss_score = 0
 AVSE = 0
-# Access Vector Scoring Evaluation
+# Access Vector Scoring Evaluation (AV)
 
 print(Fore.BLUE + "Access Vector Scoring Evaluation (AV)" + Style.RESET_ALL)
 AVSE = 0
@@ -127,65 +127,8 @@ while AVSE != 1:
         AccessVector = 1.0
     else:
         print("Wrong value")
-
-# Authentication Scoring Evaluation
-ASE = 0
-print(Fore.BLUE + "Authentication Scoring Evaluation (Au)" + Style.RESET_ALL)
-while ASE != 1:
-    Au = input(
-        "Multiple "
-        + Fore.YELLOW
-        + "(M)"
-        + Style.RESET_ALL
-        + " or Single "
-        + Fore.YELLOW
-        + "(S)"
-        + Style.RESET_ALL
-        + " or None "
-        + Fore.YELLOW
-        + "(N)"
-        + Style.RESET_ALL
-        + " or "
-        + Fore.YELLOW
-        + "def: "
-        + Style.RESET_ALL
-    )
-    if Au == "def":
-        print("")
-        print(
-            Fore.GREEN
-            + "Multiple (M): Exploiting the vulnerability requires that the "
-              "exploiter authenticate two or more times, even if the same "
-              "credentials are used each time. An example is an exploiter "
-              "authenticating to an operating system in addition to "
-              "providing credentials to access an application hosted on that "
-              "system"
-        )
-        print("")
-        print(
-            "Single (S): One instance of authentication is required to "
-            "access and exploit the vulnerability"
-        )
-        print("")
-        print(
-            "None (N): Authentication is not required to access and exploit "
-            "the vulnerability"
-            + Style.RESET_ALL
-        )
-        print("")
-    elif Au == "M":
-        ASE = 1
-        Authentication = 0.45
-    elif Au == "S":
-        ASE = 1
-        Authentication = 0.56
-    elif Au == "N":
-        ASE = 1
-        Authentication = 0.704
-    else:
-        print("Wrong value")
-
-# Access Complexity (AC)
+        
+#Access Complexity (AC)
 ACE = 0
 print(Fore.BLUE + "Access Complexity (AC) " + Style.RESET_ALL)
 while ACE != 1:
@@ -295,22 +238,79 @@ while ACE != 1:
     else:
         print("Wrong value")
 
+# Authentication Scoring Evaluation (Au)
+ASE = 0
+print(Fore.BLUE + "Authentication Scoring Evaluation (Au)" + Style.RESET_ALL)
+while ASE != 1:
+    Au = input(
+        "Multiple "
+        + Fore.YELLOW
+        + "(M)"
+        + Style.RESET_ALL
+        + " or Single "
+        + Fore.YELLOW
+        + "(S)"
+        + Style.RESET_ALL
+        + " or None "
+        + Fore.YELLOW
+        + "(N)"
+        + Style.RESET_ALL
+        + " or "
+        + Fore.YELLOW
+        + "def: "
+        + Style.RESET_ALL
+    )
+    if Au == "def":
+        print("")
+        print(
+            Fore.GREEN
+            + "Multiple (M): Exploiting the vulnerability requires that the "
+              "exploiter authenticate two or more times, even if the same "
+              "credentials are used each time. An example is an exploiter "
+              "authenticating to an operating system in addition to "
+              "providing credentials to access an application hosted on that "
+              "system"
+        )
+        print("")
+        print(
+            "Single (S): One instance of authentication is required to "
+            "access and exploit the vulnerability"
+        )
+        print("")
+        print(
+            "None (N): Authentication is not required to access and exploit "
+            "the vulnerability"
+            + Style.RESET_ALL
+        )
+        print("")
+    elif Au == "M":
+        ASE = 1
+        Authentication = 0.45
+    elif Au == "S":
+        ASE = 1
+        Authentication = 0.56
+    elif Au == "N":
+        ASE = 1
+        Authentication = 0.704
+    else:
+        print("Wrong value")
+
 # Confidentiality Impact (C)
 CI = 0
 print(Fore.BLUE + "Confidentiality Impact (C) " + Style.RESET_ALL)
 while CI != 1:
-    C = input(
-        "None "
+    C = input(        
+        "Complete "
         + Fore.YELLOW
-        + "(N)"
+        + "(C)"
         + Style.RESET_ALL
         + " or Partial "
         + Fore.YELLOW
         + "(P)"
         + Style.RESET_ALL
-        + " or Complete "
+        + " or None "
         + Fore.YELLOW
-        + "(C)"
+        + "(N)"
         + Style.RESET_ALL
         + " or "
         + Fore.YELLOW
@@ -321,8 +321,13 @@ while CI != 1:
         print("")
         print(
             Fore.GREEN
-            + "None (N) : There is no impact to the confidentiality of the "
-              "system"
+            + 
+            "Complete (C): There is total information disclosure, resulting "
+            "in all system files being revealed. The exploiter is able to "
+            "read all of the system's data (memory, files, etc.) An example "
+            "is someone who is not authorized to act as a system "
+            "administrator gaining full administrator privileges to the "
+            "system."
         )
         print("")
         print(
@@ -345,13 +350,9 @@ while CI != 1:
         )
         print("")
         print(
-            "Complete (C): There is total information disclosure, resulting "
-            "in all system files being revealed. The exploiter is able to "
-            "read all of the system's data (memory, files, etc.) An example "
-            "is someone who is not authorized to act as a system "
-            "administrator gaining full administrator privileges to the "
-            "system"
-            + Style.RESET_ALL
+             "None (N) : There is no impact to the confidentiality of the "
+             "system."
+              + Style.RESET_ALL
         )
         print("")
     elif C == "N":
@@ -370,18 +371,18 @@ while CI != 1:
 II = 0
 print(Fore.BLUE + "Integrity Impact (I)  " + Style.RESET_ALL)
 while II != 1:
-    I = input(
-        "None "
+    I = input(       
+        "Complete "
         + Fore.YELLOW
-        + "(N)"
+        + "(C)"
         + Style.RESET_ALL
         + " or Partial "
         + Fore.YELLOW
         + "(P)"
         + Style.RESET_ALL
-        + " or Complete "
+        + " or None "
         + Fore.YELLOW
-        + "(C)"
+        + "(N)"
         + Style.RESET_ALL
         + " or "
         + Fore.YELLOW
@@ -391,8 +392,12 @@ while II != 1:
     if I == "def":
         print("")
         print(
-            Fore.GREEN + "None (N) : There is no impact to the integrity of "
-                         "the system."
+            Fore.GREEN + "Complete (C): There is a total compromise of system integrity. "
+            "There is a complete loss of system protection, resulting in the "
+            "entire system being compromised. The exploiter is able to "
+            "modify any files on the target system. An example is someone "
+            "who is not authorized to act as a system administrator gaining "
+            "full administrator privileges to the system."
         )
         print("")
         print(
@@ -418,12 +423,8 @@ while II != 1:
         )
         print("")
         print(
-            "Complete (C): There is a total compromise of system integrity. "
-            "There is a complete loss of system protection, resulting in the "
-            "entire system being compromised. The exploiter is able to "
-            "modify any files on the target system. An example is someone "
-            "who is not authorized to act as a system administrator gaining "
-            "full administrator privileges to the system."
+            "None (N) : There is no impact to the integrity of "
+            "the system."
             + Style.RESET_ALL
         )
         print("")
@@ -444,18 +445,18 @@ AI = 0
 print(Fore.BLUE + "Availability Impact (A)  " + Style.RESET_ALL)
 while AI != 1:
     A = input(
-        "None "
+        "Complete "
         + Fore.YELLOW
-        + "(N)"
-        + Style.RESET_ALL
+        + "(C)"
+        + Style.RESET_ALL       
         + " or Partial "
         + Fore.YELLOW
         + "(P)"
         + Style.RESET_ALL
-        + " or Complete "
+        + " or None "
         + Fore.YELLOW
-        + "(C)"
-        + Style.RESET_ALL
+        + "(N)"
+        + Style.RESET_ALL              
         + " or "
         + Fore.YELLOW
         + "def: "
@@ -464,9 +465,13 @@ while AI != 1:
     if A == "def":
         print("")
         print(
-            Fore.GREEN
-            + "None (N) : There is no impact to the availability of the "
-              "system."
+       	    Fore.GREEN
+            + "Complete (C): There is a total shutdown of the affected "
+            "resource. The exploiter can render the resource completely "
+            "unavailable. An example is excess privileges that permit a user "
+            "to shut down a system or delete critical system files that the "
+            "system cannot operate without. Another example is disabling a "
+            "service that is needed to boot the system."
         )
         print("")
         print(
@@ -480,12 +485,8 @@ while AI != 1:
         )
         print("")
         print(
-            "Complete (C): There is a total shutdown of the affected "
-            "resource. The exploiter can render the resource completely "
-            "unavailable. An example is excess privileges that permit a user "
-            "to shut down a system or delete critical system files that the "
-            "system cannot operate without. Another example is disabling a "
-            "service that is needed to boot the system."
+	    "None (N) : There is no impact to the availability of the "
+            "system."
             + Style.RESET_ALL
         )
         print("")
